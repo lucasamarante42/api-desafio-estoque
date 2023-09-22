@@ -9,8 +9,9 @@ Os comandos abaixo foram executados para a inicialização do projeto e criaçã
 
 <blockquote>
 django-admin startproject estoque_geral . <br>
-django-admin startapp produto
-django-admin startapp estoque
+django-admin startapp produto ou python manage.py startapp produto
+django-admin startapp estoque ou python manage.py startapp estoque
+django-admin startapp movimento_produto ou python manage.py startapp movimento_produto
 </blockquote>
 
 Design Pattern utilizados Django Rest Framework:
@@ -49,7 +50,7 @@ python3 manage.py migrate
 
 Rodando a aplicação
 
-É necessário antes de executar o projeto criar um usuário admin e cadastrar a aplicação challenge-service pois estamos utilizando para segurança de acesso aos endpoints OAuth Token 2.0 através da lib externa django-oauth-toolkit.
+É necessário antes de executar o projeto criar um usuário admin e cadastrar a aplicação api-desafio-estoque pois estamos utilizando para segurança de acesso aos endpoints OAuth Token 2.0 através da lib externa django-oauth-toolkit.
 
 No terminal digitar:
 <blockquote>
@@ -69,11 +70,11 @@ http://localhost:8002/admin
 
 Localizar Applications -> Add Application para registrá-las:
 
-Name: just a name of your choice => challenge-service
+Name: just a name of your choice => api-desafio-estoque
 Client Type: confidential
 Authorization Grant Type: Resource owner password-based
 
-Copiar os valores de CLIENT_ID e CLIENT_SECRET nas variáveis de ambiente do settings do challenge-service
+Copiar os valores de CLIENT_ID e CLIENT_SECRET nas variáveis de ambiente do settings do api-desafio-estoque
 </blockquote>
 
 <h3><b>EXECUÇÃO DOS CASOS DE TESTE</b></h3>
@@ -98,8 +99,8 @@ python3 seed.py
 
 Rodando a aplicação via Docker
 <blockquote>
-docker build -t challenge-service . <br>
-docker run -d -p 7779:8002 challenge-service
+docker build -t api-desafio-estoque . <br>
+docker run -d -p 7779:8002 api-desafio-estoque
 </blockquote>
 
 Foi utilizado a lib para criação de logs: drf-tracking

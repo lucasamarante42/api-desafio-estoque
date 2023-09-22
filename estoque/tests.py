@@ -2,25 +2,23 @@ from rest_framework.test import APITestCase
 from django.conf import settings
 from django.urls import reverse
 from rest_framework import status
-from .models import Produto
-from .serializers import ProdutoSerializer
+from .models import Estoque
+from .serializers import EstoqueSerializer
 
-class ProdutoTests(APITestCase):
+class EstoqueTests(APITestCase):
 
 	valid_body = {
-		'codigo': 'MN-100',
-		'descricao': 'Monitor AOC 100',
-		'ativo': True
+		'id_produto': 1,
+		'quantidade': 1
 	}
 
 	invalid_body = {
-		'codigo': '',
-		'descricao': 'Monitor AOC 100',
-		'ativo': 'True'
+		'id_produto': 100,
+		'quantidade': 2.90
 	}
 
-	Produto.objects.create(codigo='MOUSEMLT', descricao='Mouse Multilaser', ativo=True)
-	Produto.objects.create(codigo='TCL-990', descricao='Teclado Multilaser', ativo=True)
+	Estoque.objects.create(id_produto=1, quantidade=5)
+	Estoque.objects.create(id_produto=2, quantidade=7)
 
 	def test_post_with_valid(self):
 		url = reverse('get_post')
@@ -38,8 +36,8 @@ class ProdutoTests(APITestCase):
 		url = reverse('get_post')
 		response = self.client.get(url)
 
-		Imovels = Produto.objects.all()
-		serializer = ProdutoSerializer(Imovels, many=True)
+		Imovels = Estoque.objects.all()
+		serializer = EstoqueSerializer(Imovels, many=True)
 
 		self.assertEqual(response.data, serializer.data)
 		self.assertEqual(response.status_code, status.HTTP_200_OK)

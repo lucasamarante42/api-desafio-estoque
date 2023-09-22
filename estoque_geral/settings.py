@@ -30,8 +30,8 @@ API_PATH = os.environ.get('API_PATH', 'api')
 
 # CLIENT_ID e CLIENT_SECRET da API
 # Criados no dash do django-admin
-API_CLIENT_ID = os.environ.get('API_CLIENT_ID', 'tshJBHqLqKlNRPdAChzIDyyBKakT3i9BLB2C3VAq')
-API_CLIENT_SECRET = os.environ.get('API_CLIENT_SECRET', 'cUoLqqKCURa40eUboM23r0QiluMRqmJtp91wiXfbLFiJQGmVNxthBRKdWJXVVKr11PHCpj7UlGNmtR0SueP7DZ4aVvAAUCUia010FONPY1zTJGz8qrnY6f3KKk98q1um')
+API_CLIENT_ID = os.environ.get('API_CLIENT_ID', 'N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1')
+API_CLIENT_SECRET = os.environ.get('API_CLIENT_SECRET', 'lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw')
 
 
 # Quick-start development settings - unsuitable for production
@@ -57,9 +57,10 @@ INSTALLED_APPS = [
 	'oauth2_provider',
 	'rest_framework',
 	'rest_framework_tracking',
-    # 'produto',
-    # 'estoque',
-    # 'django_seed',
+    'produto',
+    'estoque',
+    'movimento_produto',
+    'django_seed',
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -95,7 +96,7 @@ REST_FRAMEWORK = {
 		'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
 	),
 
-	'DEFAULT_PAGINATION_CLASS': 'challenge_geral.pagination.CustomPagination',
+	'DEFAULT_PAGINATION_CLASS': 'estoque_geral.pagination.CustomPagination',
 
 	'DATETIME_FORMAT': '%d/%m/%Y %H:%M:%S',
 	'DATE_FORMAT': '%d/%m/%Y',

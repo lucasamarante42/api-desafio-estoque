@@ -2,25 +2,25 @@ from rest_framework.test import APITestCase
 from django.conf import settings
 from django.urls import reverse
 from rest_framework import status
-from .models import Produto
-from .serializers import ProdutoSerializer
+from .models import MovimentoProduto
+from .serializers import MovimentoProdutoSerializer
 
-class ProdutoTests(APITestCase):
+class MovimentoProdutoTests(APITestCase):
 
 	valid_body = {
-		'codigo': 'MN-100',
-		'descricao': 'Monitor AOC 100',
-		'ativo': True
+		'id_produto': 1,
+		'quantidade_entrada': 1,
+		'quantidade_saida': 0,
 	}
 
 	invalid_body = {
-		'codigo': '',
-		'descricao': 'Monitor AOC 100',
-		'ativo': 'True'
+		'id_produto': 100,
+		'quantidade_entrada': 'A',
+		'quantidade_saida': 0,
 	}
 
-	Produto.objects.create(codigo='MOUSEMLT', descricao='Mouse Multilaser', ativo=True)
-	Produto.objects.create(codigo='TCL-990', descricao='Teclado Multilaser', ativo=True)
+	MovimentoProduto.objects.create(id_produto=1, quantidade_entrada=5, quantidade_saida=0)
+	MovimentoProduto.objects.create(id_produto=2, quantidade_entrada=7, quantidade_saida=0)
 
 	def test_post_with_valid(self):
 		url = reverse('get_post')
@@ -38,8 +38,8 @@ class ProdutoTests(APITestCase):
 		url = reverse('get_post')
 		response = self.client.get(url)
 
-		Imovels = Produto.objects.all()
-		serializer = ProdutoSerializer(Imovels, many=True)
+		Imovels = MovimentoProduto.objects.all()
+		serializer = MovimentoProdutoSerializer(Imovels, many=True)
 
 		self.assertEqual(response.data, serializer.data)
 		self.assertEqual(response.status_code, status.HTTP_200_OK)

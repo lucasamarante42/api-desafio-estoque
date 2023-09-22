@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
-from .serializers import ProdutoSerializer, ProdutoSerializers, BulkProdutoSerializer
-from .business import ProdutoBusiness
-from .filters import ProdutoFilter
+from .serializers import EstoqueSerializer, EstoqueSerializers, BulkEstoqueSerializer
+from .business import EstoqueBusiness
+from .filters import EstoqueFilter
 from estoque_geral.utils import check_filtered_params_exists
 
 from rest_framework_tracking.mixins import LoggingMixin
@@ -19,8 +19,8 @@ from rest_framework_bulk import BulkModelViewSet
 """
 class get_delete_update(LoggingMixin, RetrieveUpdateDestroyAPIView):
 
-	queryset = ProdutoBusiness.bs_get_all()
-	serializer_class = ProdutoSerializer
+	queryset = EstoqueBusiness.bs_get_all()
+	serializer_class = EstoqueSerializer
 
 """
  View genérica ListCreateAPIView => utilizado para método GET e POST
@@ -37,10 +37,10 @@ class get_post(LoggingMixin, ListCreateAPIView):
 	def should_log(self, request, response):
 		return (request.method == 'GET' and response.status_code != 200) or request.method != 'GET'
 
-	queryset = ProdutoBusiness.bs_get_all()
-	serializer_class = ProdutoSerializer
+	queryset = EstoqueBusiness.bs_get_all()
+	serializer_class = EstoqueSerializer
 
-	filterset_class = ProdutoFilter
+	filterset_class = EstoqueFilter
 
 """
  View MultiObjectCreateAPIView => utilizado para método POST
@@ -53,7 +53,7 @@ class get_post(LoggingMixin, ListCreateAPIView):
 """
 class post_list(LoggingMixin, MultiObjectCreateAPIView):
 
-	serializer_class = ProdutoSerializer
+	serializer_class = EstoqueSerializer
 
 """
  View MultiObjectUpdateDestroyAPIView => utilizado para método PUT
@@ -67,8 +67,8 @@ class post_list(LoggingMixin, MultiObjectCreateAPIView):
 """
 class update_bulk(LoggingMixin,	MultiObjectUpdateDestroyAPIView):
 
-	bussiness_class = ProdutoBusiness
-	serializer_class = ProdutoSerializers
+	bussiness_class = EstoqueBusiness
+	serializer_class = EstoqueSerializers
 
 """
  View BulkModelViewSet => utilizado para método GET/POST/DELETE/PUT
@@ -85,10 +85,10 @@ class update_bulk(LoggingMixin,	MultiObjectUpdateDestroyAPIView):
 	allow_bulk_destroy => lógica para evitar a exclusão em massa sem filtro
 """
 class bulk_methods(LoggingMixin, BulkModelViewSet):
-	queryset = ProdutoBusiness.bs_get_all()
-	serializer_class = BulkProdutoSerializer
+	queryset = EstoqueBusiness.bs_get_all()
+	serializer_class = BulkEstoqueSerializer
 
-	filterset_class = ProdutoFilter
+	filterset_class = EstoqueFilter
 
 	def allow_bulk_destroy(self, qs, filtered):
 		filters = list(self.filterset_class.get_fields().keys())

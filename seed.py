@@ -1,6 +1,6 @@
 import os
 
-PROJECT_NAME = 'challenge_geral'
+PROJECT_NAME = 'estoque_geral'
 
 def main():
 	print('----- Start seed -----')

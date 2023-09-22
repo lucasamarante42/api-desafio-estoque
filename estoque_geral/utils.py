@@ -62,7 +62,7 @@ def show_message_errors(description_field=None, max_length_field=None, max_digit
 def show_message_to_unique_error(description_field=None):
 	return {'unique': 'O campo {} é único e já existe no banco de dados.'.format(description_field)}
 
-def show_message_to_boolean_field(value_field=None):
+def get_label_to_boolean_field(value_field=None):
 	str_formatted = {
 		True: 'SIM',
 		False: 'NÃO',
@@ -86,9 +86,9 @@ def is_empty_dict_params(dict_params=None):
 				return True
 		return False
 
-def mount_list_ids(obj_array=None):
+def mount_list_ids(array_obj=None):
 	lst_ids = []
-	for item in obj_array:
+	for item in array_obj:
 		lst_ids.append(item.get('id'))
 	return lst_ids
 
