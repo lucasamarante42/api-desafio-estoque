@@ -22,4 +22,4 @@ class MovimentoProdutoBusiness:
 
 		stock_balance = int(qs_stock_balance.get('stock_balance') or 0)
 
-		EstoqueRepositories.rp_update_by_id_product(id_product=id_product, field='quantidade', value=stock_balance)
+		EstoqueRepositories.rp_create_or_update_by_id_product(id_product=id_product, field='quantidade', value=stock_balance)

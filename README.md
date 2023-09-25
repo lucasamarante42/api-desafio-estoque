@@ -12,6 +12,8 @@ django-admin startproject estoque_geral . <br>
 django-admin startapp produto ou python manage.py startapp produto
 django-admin startapp estoque ou python manage.py startapp estoque
 django-admin startapp movimento_produto ou python manage.py startapp movimento_produto
+django-admin startapp estoque_futuro ou python manage.py startapp estoque_futuro
+django-admin startapp estoque_reserva ou python manage.py startapp estoque_reserva
 </blockquote>
 
 Design Pattern utilizados Django Rest Framework:
@@ -32,7 +34,12 @@ Design Pattern utilizados Django Rest Framework:
 <blockquote>
 python3 create-scaffold.py 'produto'
 python3 create-scaffold.py 'estoque'
+python3 create-scaffold.py 'movimento_produto'
+python3 create-scaffold.py 'estoque_futuro'
+python3 create-scaffold.py 'estoque_reserva'
 </blockquote>
+
+Criação de nomes de funções, variáveis e outros está flexível pois não foi abordado alguma regra específica de qual seria o idioma a ser codificado, ou outros.
 
 Instalando os pacotes do projeto. Todas as libs estão no arquivo requirements.txt. Quando não há especificado a versão da lib, é instalado a versão mais atual.
 <blockquote>pip3 install -r requirements.txt</blockquote>

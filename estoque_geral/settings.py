@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'produto',
     'estoque',
     'movimento_produto',
+    'estoque_futuro',
+    'estoque_reserva',
     'django_seed',
 ]
 

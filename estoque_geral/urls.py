@@ -25,7 +25,9 @@ urlpatterns = [
 	url(r'authenticate/token/$', CustomTokenView.as_view(), name='token'),
 	url(r'^', include('produto.urls')),
 	url(r'^', include('estoque.urls')),
-	# url(r'^', include('reserva.urls')),
+	url(r'^', include('movimento_produto.urls')),
+	url(r'^', include('estoque_futuro.urls')),
+	url(r'^', include('estoque_reserva.urls')),
 ]
 
 if settings.DEBUG:
