@@ -6,8 +6,8 @@ path_movimento_produto = '{}/movimento-produto'.format(settings.API_PATH)
 
 urlpatterns = [
 	re_path(r'^{}/(?P<pk>[0-9]+)$'.format(path_movimento_produto),
-		views.get_delete_update.as_view(),
-		name='get_delete_update'
+		views.get_delete.as_view(),
+		name='get_delete'
 	),
 	path(path_movimento_produto,
 		views.get_post.as_view(),

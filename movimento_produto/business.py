@@ -13,8 +13,18 @@ class MovimentoProdutoBusiness:
 		return MovimentoProdutoRepositories.rp_get_by_id(pk)
 
 	@staticmethod
+	def bs_delete(pk=None, qs_obj=None):
+		return MovimentoProdutoRepositories.rp_delete_by_id(pk=pk, qs_obj=qs_obj)
+
+	@staticmethod
 	def bs_get_stock_balance_by_id_product(id_product=None):
 		return MovimentoProdutoRepositories.rp_get_stock_balance_by_id_product(id_product=id_product)
+
+	@staticmethod
+	def bs_check_conditions(dict_data=None):
+		check_conditions, status_code, msg = None, 200, None
+		print(dict_data)
+
 
 	@staticmethod
 	def bs_update_stock_balance_by_id_product(id_product=None):
