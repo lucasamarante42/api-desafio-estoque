@@ -1,0 +1,1413 @@
+{
+	"info": {
+		"_postman_id": "4dbe8b19-76cd-4304-b724-bcf3213812f4",
+		"name": "api-estoque",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3452876"
+	},
+	"item": [
+		{
+			"name": "produto",
+			"item": [
+				{
+					"name": "produto",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/produto?page_size=100&codigo=MS",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"produto"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "100"
+								},
+								{
+									"key": "codigo",
+									"value": "MS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produto",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": \"3\",\n    \"descricao\": \"PRODUTO 3\",\n    \"ativo\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/produto",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produto bulk",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n{\n    \"codigo\": \"505\",\n    \"descricao\": \"PRODUTO 394\",\n    \"ativo\": true\n},\n{\n    \"codigo\": \"5509\",\n    \"descricao\": \"PRODUTO 349\",\n    \"ativo\": true\n}\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/produto/create-bulk",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"produto",
+								"create-bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produto",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": \"1\",\n    \"descricao\": \"PRODUTO 1\",\n    \"ativo\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/produto/1",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"produto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produto",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/produto/1",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"produto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movimento-produto",
+			"item": [
+				{
+					"name": "movimento-produto",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/movimento-produto?page_size=100",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"movimento-produto"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movimento-produto",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_produto\": \"2\",\n    \"quantidade_entrada\": 0,\n    \"quantidade_saida\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/movimento-produto",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"movimento-produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movimento-produto",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port}}/api/movimento-produto/2",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"movimento-produto",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "estoque-futuro",
+			"item": [
+				{
+					"name": "estoque-futuro",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque-futuro?page_size=100",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque-futuro"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estoque-futuro",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_produto\": \"2\",\n    \"quantidade\": 5,\n    \"dt_disponivel\": \"2023-09-28\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque-futuro",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque-futuro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estoque-futuro",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_produto\": \"2\",\n    \"quantidade\": 5,\n    \"dt_disponivel\": \"2023-09-26\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque-futuro/2",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque-futuro",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estoque-futuro bulk",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n{\n    \"id\": 2,\n    \"id_produto\": \"2\",\n    \"quantidade\": 5,\n    \"dt_disponivel\": \"2023-09-26\"\n}\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque-futuro/update-bulk",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque-futuro",
+								"update-bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estoque-futuro",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque-futuro/1",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque-futuro",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "estoque",
+			"item": [
+				{
+					"name": "estoque",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque?page_size=100&info_all=true",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "100"
+								},
+								{
+									"key": "id_produto",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "info_all",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "estoque-reserva",
+			"item": [
+				{
+					"name": "estoque-reserva",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque-reserva?page_size=100",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque-reserva"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estoque-reserva",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_produto\": \"2\",\n    \"quantidade\": 5,\n    \"dt_expiracao\": \"2023-09-28\",\n    \"status\": \"EM ABERTO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque-reserva",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque-reserva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estoque-reserva",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_produto\": \"2\",\n    \"quantidade\": 5,\n    \"dt_expiracao\": \"2023-09-26\",\n    \"status\": \"EM ABERTO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque-reserva/2",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque-reserva",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estoque-reserva",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n{\n    \"id\": 2,\n    \"id_produto\": \"2\",\n    \"quantidade\": 5,\n    \"dt_expiracao\": \"2023-09-26\",\n    \"status\": \"EM ABERTO\"\n}\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque-reserva/update-bulk",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque-reserva",
+								"update-bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estoque-reserva",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "evangelho19",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "lucas.amarante42",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://127.0.0.1:8002/authenticate/token/",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "read write groups",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port3}}/api/estoque-reserva/1",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port3}}",
+							"path": [
+								"api",
+								"estoque-reserva",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
