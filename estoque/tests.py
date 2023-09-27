@@ -4,6 +4,7 @@ from django.urls import reverse
 from rest_framework import status
 from .models import Estoque
 from .serializers import EstoqueSerializer
+from produto.repositories import ProdutoRepositories
 
 class EstoqueTests(APITestCase):
 
@@ -17,8 +18,9 @@ class EstoqueTests(APITestCase):
 		'quantidade': 2.90
 	}
 
-	Estoque.objects.create(id_produto=1, quantidade=5)
-	Estoque.objects.create(id_produto=2, quantidade=7)
+	qs_produto = ProdutoRepositories.rp_get_all()
+	Estoque.objects.create(id_produto=qs_produto[0], quantidade=5)
+	Estoque.objects.create(id_produto=qs_produto[1], quantidade=7)
 
 	def test_post_with_valid(self):
 		url = reverse('get_post')

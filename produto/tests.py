@@ -19,8 +19,8 @@ class ProdutoTests(APITestCase):
 		'ativo': 'True'
 	}
 
-	Produto.objects.create(codigo='MOUSEMLT', descricao='Mouse Multilaser', ativo=True)
-	Produto.objects.create(codigo='TCL-990', descricao='Teclado Multilaser', ativo=True)
+	Produto.objects.create(codigo='BIKE1', descricao='BICICLETA 1', ativo=True)
+	Produto.objects.create(codigo='BIKE2', descricao='BICICLETA 2', ativo=True)
 
 	def test_post_with_valid(self):
 		url = reverse('get_post')
@@ -38,8 +38,8 @@ class ProdutoTests(APITestCase):
 		url = reverse('get_post')
 		response = self.client.get(url)
 
-		Imovels = Produto.objects.all()
-		serializer = ProdutoSerializer(Imovels, many=True)
+		qs = Produto.objects.all()
+		serializer = ProdutoSerializer(qs, many=True)
 
 		self.assertEqual(response.data, serializer.data)
 		self.assertEqual(response.status_code, status.HTTP_200_OK)

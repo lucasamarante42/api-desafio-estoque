@@ -4,6 +4,7 @@ from django.urls import reverse
 from rest_framework import status
 from .models import MovimentoProduto
 from .serializers import MovimentoProdutoSerializer
+from produto.repositories import ProdutoRepositories
 
 class MovimentoProdutoTests(APITestCase):
 
@@ -19,8 +20,9 @@ class MovimentoProdutoTests(APITestCase):
 		'quantidade_saida': 0,
 	}
 
-	MovimentoProduto.objects.create(id_produto=1, quantidade_entrada=5, quantidade_saida=0)
-	MovimentoProduto.objects.create(id_produto=2, quantidade_entrada=7, quantidade_saida=0)
+	qs_produto = ProdutoRepositories.rp_get_all()
+	MovimentoProduto.objects.create(id_produto=qs_produto[0], quantidade_entrada=5, quantidade_saida=0)
+	MovimentoProduto.objects.create(id_produto=qs_produto[1], quantidade_entrada=7, quantidade_saida=0)
 
 	def test_post_with_valid(self):
 		url = reverse('get_post')
@@ -38,8 +40,8 @@ class MovimentoProdutoTests(APITestCase):
 		url = reverse('get_post')
 		response = self.client.get(url)
 
-		Imovels = MovimentoProduto.objects.all()
-		serializer = MovimentoProdutoSerializer(Imovels, many=True)
+		qs = MovimentoProduto.objects.all()
+		serializer = MovimentoProdutoSerializer(qs, many=True)
 
 		self.assertEqual(response.data, serializer.data)
 		self.assertEqual(response.status_code, status.HTTP_200_OK)

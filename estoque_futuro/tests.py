@@ -4,6 +4,8 @@ from django.urls import reverse
 from rest_framework import status
 from .models import EstoqueFuturo
 from .serializers import EstoqueFuturoSerializer
+from produto.repositories import ProdutoRepositories
+from estoque_geral.utils import get_type_date
 
 class EstoqueFuturoTests(APITestCase):
 
@@ -19,8 +21,9 @@ class EstoqueFuturoTests(APITestCase):
 		'dt_disponivel': '2023-01-32',
 	}
 
-	EstoqueFuturo.objects.create(id_produto=1, quantidade=5)
-	EstoqueFuturo.objects.create(id_produto=2, quantidade=7)
+	qs_produto = ProdutoRepositories.rp_get_all()
+	EstoqueFuturo.objects.create(id_produto=qs_produto[0], quantidade=5, dt_disponivel=get_type_date('date'))
+	EstoqueFuturo.objects.create(id_produto=qs_produto[1], quantidade=7, dt_disponivel=get_type_date('date'))
 
 	def test_post_with_valid(self):
 		url = reverse('get_post')

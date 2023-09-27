@@ -4,6 +4,8 @@ from django.urls import reverse
 from rest_framework import status
 from .models import EstoqueReserva
 from .serializers import EstoqueReservaSerializer
+from produto.repositories import ProdutoRepositories
+from estoque_geral.utils import get_type_date
 
 class EstoqueReservaTests(APITestCase):
 
@@ -17,12 +19,13 @@ class EstoqueReservaTests(APITestCase):
 	invalid_body = {
 		'id_produto': 100,
 		'quantidade': 2.90,
-		'dt_expiracao': '2023-01-32',
+		'dt_expiracao': '2023-01-26',
 		'status': None,
 	}
 
-	EstoqueReserva.objects.create(id_produto=1, quantidade=5)
-	EstoqueReserva.objects.create(id_produto=2, quantidade=7)
+	qs_produto = ProdutoRepositories.rp_get_all()
+	EstoqueReserva.objects.create(id_produto=qs_produto[0], quantidade=5, dt_expiracao=get_type_date('date'))
+	EstoqueReserva.objects.create(id_produto=qs_produto[1], quantidade=7, dt_expiracao=get_type_date('date'))
 
 	def test_post_with_valid(self):
 		url = reverse('get_post')
