@@ -57,6 +57,8 @@ python3 manage.py migrate
 
 Rodando a aplicação
 
+**Foi comentado a lib do OAuth Token 2.0 para não precisar ficar gerando o token
+
 É necessário antes de executar o projeto criar um usuário admin e cadastrar a aplicação api-desafio-estoque pois estamos utilizando para segurança de acesso aos endpoints OAuth Token 2.0 através da lib externa django-oauth-toolkit.
 
 No terminal digitar:
@@ -94,9 +96,7 @@ python manage.py test
 Foi gerado de forma automatizada uma fixture (seeder) para criar registros na base de dados utilizando a lib django-seed
 
 <blockquote>
-python3 manage.py seed imovel --number=15
-python3 manage.py seed anuncio --number=15
-python3 manage.py seed reserva --number=15
+python3 manage.py seed produto --number=15
 </blockquote>
 
 Para rodar o script seed criado:

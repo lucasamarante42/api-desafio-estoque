@@ -5,8 +5,8 @@ from estoque_geral.utils import show_message_errors, data_mapping_to_serializer,
 from rest_framework_bulk import BulkListSerializer, BulkSerializerMixin
 
 dict_extra_kwargs = {
-	'codigo': show_message_errors(description_field='codigo', max_length_field='30'),
-	'descricao': show_message_errors(description_field='descricao', max_length_field='200'),
+	'codigo': show_message_errors(description_field='codigo', max_length_field=30),
+	'descricao': show_message_errors(description_field='descricao', max_length_field=200),
 	'ativo': show_message_errors(description_field='ativo'),
 	'dt_criacao': show_message_errors(description_field='dt_criacao'),
 	'dt_atualizacao': show_message_errors(description_field='dt_atualizacao')

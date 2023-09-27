@@ -66,9 +66,9 @@ INSTALLED_APPS = [
 ]
 
 AUTHENTICATION_BACKENDS = (
-	'oauth2_provider.backends.OAuth2Backend',
+	# 'oauth2_provider.backends.OAuth2Backend',
 	# Uncomment following if you want to access the admin
-	'django.contrib.auth.backends.ModelBackend',
+	# 'django.contrib.auth.backends.ModelBackend',
 )
 
 MIDDLEWARE = [
@@ -80,23 +80,23 @@ MIDDLEWARE = [
 	'django.contrib.messages.middleware.MessageMiddleware',
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 	'corsheaders.middleware.CorsMiddleware',
-	'oauth2_provider.middleware.OAuth2TokenMiddleware',
+	# 'oauth2_provider.middleware.OAuth2TokenMiddleware',
 ]
 
 REST_FRAMEWORK = {
 	# Use Django's standard `django.contrib.auth` permissions,
 	# or allow read-only access for unauthenticated users.
 	'DEFAULT_PERMISSION_CLASSES': (
-		'rest_framework.permissions.IsAuthenticated',
+	# 	'rest_framework.permissions.IsAuthenticated',
 	),
 
 	'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 
 	'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 
-	'DEFAULT_AUTHENTICATION_CLASSES': (
-		'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
-	),
+	# 'DEFAULT_AUTHENTICATION_CLASSES': (
+	# 	'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+	# ),
 
 	'DEFAULT_PAGINATION_CLASS': 'estoque_geral.pagination.CustomPagination',
 
@@ -112,11 +112,11 @@ REST_FRAMEWORK = {
     }
 }
 
-OAUTH2_PROVIDER = {
-	# this is the list of available scopes
-	'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'},
-	'ACCESS_TOKEN_EXPIRE_SECONDS': int(os.environ.get('ACCESS_TOKEN_EXPIRE_SECONDS', 86400)),
-}
+# OAUTH2_PROVIDER = {
+# 	# this is the list of available scopes
+# 	'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'},
+# 	'ACCESS_TOKEN_EXPIRE_SECONDS': int(os.environ.get('ACCESS_TOKEN_EXPIRE_SECONDS', 86400)),
+# }
 
 # Package django-cors-headers
 CORS_ORIGIN_ALLOW_ALL = True
@@ -126,8 +126,6 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
     'content-disposition',
 	'Content-Disposition',
 ]
-
-# BACKGROUND_TASK_RUN_ASYNC = True
 
 # host/IP local (descomentar para executar localmente)
 ALLOWED_HOSTS = [

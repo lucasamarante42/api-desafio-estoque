@@ -59,14 +59,8 @@ class get_post(LoggingMixin, ListCreateAPIView):
 	def post(self, request):
 		serializer = MovimentoProdutoSerializer(data=request.data)
 		if serializer.is_valid():
-			check_conditions, status_code, msg = MovimentoProdutoBusiness.bs_check_conditions(dict_data=serializer.validated_data)
-
-			if check_conditions:
-				obj = serializer.save()
-				if obj:
-					MovimentoProdutoBusiness.bs_update_stock_balance_by_id_product(id_product=obj.id_produto_id)
-				return Response(serializer.data, status=status.HTTP_201_CREATED)
-			else:
-				return Response(default_message_request(status_code, msg), status=status_code)
-
+			obj = serializer.save()
+			if obj:
+				MovimentoProdutoBusiness.bs_update_stock_balance_by_id_product(id_product=obj.id_produto_id)
+			return Response(serializer.data, status=status.HTTP_201_CREATED)
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

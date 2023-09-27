@@ -117,3 +117,19 @@ def get_type_date(type_datetime=None):
 	}
 
 	return types_datetime.get(type_datetime)
+
+def convert_date(value_date=None, format_date=None, convert_twice=None):
+	new_value = None
+	if value_date:
+		if type(value_date) is str:
+			if format_date and not convert_twice:
+				new_value = datetime.strptime(value_date, format_date)
+			else:
+				new_value = datetime.strptime(value_date, '%Y-%m-%d')
+			if convert_twice:
+				new_value = new_value.strftime(format_date)
+
+		else:
+			new_value = value_date.strftime(format_date)
+
+	return new_value

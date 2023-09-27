@@ -1,5 +1,5 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
-from .serializers import EstoqueSerializer, EstoqueSerializers, BulkEstoqueSerializer
+from .serializers import EstoqueSerializer, EstoqueSerializers, BulkEstoqueSerializer, EstoqueInfoAllSerializer
 from .business import EstoqueBusiness
 from .filters import EstoqueFilter
 from estoque_geral.utils import check_filtered_params_exists
@@ -41,6 +41,11 @@ class get_post(LoggingMixin, ListCreateAPIView):
 	serializer_class = EstoqueSerializer
 
 	filterset_class = EstoqueFilter
+
+	def get_serializer_class(self):
+		if self.request.query_params.get('info_all'):
+			return EstoqueInfoAllSerializer
+		return EstoqueSerializer
 
 """
  View MultiObjectCreateAPIView => utilizado para método POST
