@@ -30,15 +30,15 @@ API_PATH = os.environ.get('API_PATH', 'api')
 
 # CLIENT_ID e CLIENT_SECRET da API
 # Criados no dash do django-admin
-API_CLIENT_ID = os.environ.get('API_CLIENT_ID', 'N7ZZbLtY7g9OQe2fzrW9fFHO9LVbir8LE2Sp14u1')
-API_CLIENT_SECRET = os.environ.get('API_CLIENT_SECRET', 'lmWCe834Hdxdi28ZDa48JMp1bukVDokstNSNbgp24e3LppUncAxVrIhmu89ITSy13tWNszFTGClV9ltz0UA2Xgg9P8fWsZncYqxfHpFX1f4BxnvDeS0OsAjsa1d5pHGw')
+API_CLIENT_ID = os.environ.get('API_CLIENT_ID', '')
+API_CLIENT_SECRET = os.environ.get('API_CLIENT_SECRET', '')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'monehg8e_wm!wq(ed-vp+oj@e)5cdq+d6^nq@x%4$9$doxh!ty'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
